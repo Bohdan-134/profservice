@@ -1,0 +1,5 @@
+@import '../../utils/main.utils.scss';
+.washer-brands-list {
+    padding: 55px 0;
+    @include flex(row, space-between, center);
+}

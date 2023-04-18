@@ -1,0 +1,39 @@
+@import '../utils/main.utils.scss';
+.callback {
+    padding: 100px 10px !important;
+    .container {
+        @include flex(row, space-between, center);
+    }
+}
+
+.callback-text-content {
+    max-width: 600px;
+    .h2 {
+        line-height: 50px;
+    }
+    .callback-subtitle {
+        margin: 35px 0;
+    }
+    .btn {
+        color: $COLOR__ORANGE;
+    }
+}
+
+.callbackk-img-border-wrapp {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid $COLOR__DARK__BLUE;
+    @include flex(row, center, center);
+    .callbackk-img-border {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $COLOR__ORANGE;
+    }
+    svg {
+        margin: 0 0 30px 30px;
+    }
+}

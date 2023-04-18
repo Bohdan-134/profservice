@@ -1,0 +1,21 @@
+@import '../../utils/main.utils.scss';
+.advantages {
+    .h2 {
+        text-align: center;
+    }
+    .container {
+        margin-top: 60px;
+    }
+}
+
+.advantages-list {
+    @include flex(row, space-between, flex-start);
+}
+
+.advantages-item {
+    max-width: 300px;
+    text-align: center;
+    .h4 {
+        margin: 20px 0 10px;
+    }
+}

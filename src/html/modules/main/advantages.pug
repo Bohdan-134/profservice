@@ -1,0 +1,28 @@
+include ../../utils/mixin.pug
+section.section.advantages
+    h2.h2 Наші переваги
+    .container
+        ul.advantages-list
+            +advantagesItem({
+                imgSrc: '../../../image/sertificate.svg',
+                imgAlt: 'sertificate',
+                title: 'Висококваліфіковані спеціалісти',
+                text: 'Наші майстри мають великий досвід та проходять регулярне навчання.',
+            })
+            +advantagesItem({
+                imgSrc: '../../../image/compass.svg',
+                imgAlt: 'compass',
+                title: 'Прийом викликів у всі райони Києва',
+                text: 'Ми швидко реагуємо на виклики та готові приїхати до будь-якого району Києва, щоб надати нашим клієнтам високоякісний ремонт.',
+            })
+            +advantagesItem({
+                imgSrc: '../../../image/chield.svg',
+                imgAlt: 'chield',
+                title: 'Гарантія на роботу',
+                text: 'Ми надаємо гарантію на виконані роботи та замінені деталі.',
+            })
+            
+
+        
+
+

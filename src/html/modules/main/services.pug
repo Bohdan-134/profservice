@@ -1,0 +1,29 @@
+include ../../utils/mixin.pug
+section.section.services
+    h2.h2 Послуги
+    .container
+        .swiper
+            .swiper-wrapper
+                +swiperSlide({
+                    title: 'Ремонт пральних машин у Києві від ProfService.',
+                    text: 'Ми надаємо професійний ремонт пральних машин усіх марок та моделей. Наша команда досвідчених майстрів подолає будь-яку поломку, і всі роботи проводяться з гарантією якості.',
+                    pagesSrc: "./html/pages/repair-washing-machines.html",
+                    imgSrc: '../../../image/washing-machine.svg',
+                    imgAlt: 'washing-machine',
+                })
+                +swiperSlide({
+                    title: 'Ремонт сушильних машин у Києві від ProfService.',
+                    text: 'Потрібен ремонт сушильної машини? Не турбуйтесь – наші фахівці завжди готові допомогти! Ми ремонтуємо сушильні машини всіх марок та моделей, використовуючи тільки якісні запчастини та матеріали.',
+                    pagesSrc: "./html/pages/repair-dryers.html",
+                    imgSrc: '../../../image/dryer.svg',
+                    imgAlt: 'dryer',
+                })
+                +swiperSlide({
+                    title: 'Ремонт посудомийних машин від ProfService.',
+                    text: 'Якщо ваша посудомийна машина зламалася, не варто засмучуватися – ми можемо допомогти! Наша команда фахівців проведе усі необхідні роботи з ремонту посудомийних машин швидко та якісно.',
+                    pagesSrc: "./html/pages/repair-dishwashers.html",
+                    imgSrc: '../../../image/dishwasher.svg',
+                    imgAlt: 'dishwasher',
+                })
+        .swiper-button-prev
+        .swiper-button-next

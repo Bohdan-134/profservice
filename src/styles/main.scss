@@ -1,4 +1,7 @@
+// utils
 @import './utils/main.utils.scss';
-body {
-    background-color: red;
-}
+@import './modules/navigation.scss';
+@import './modules/callback.scss';
+@import './modules/copyright.scss';
+// index(main page)
+@import './modules/main/main.modules.scss';

@@ -1,0 +1,108 @@
+@import '../utils/main.utils.scss';
+.navbar {
+    position: relative;
+    z-index: 10;
+    @include flex(row, space-between, center);
+}
+
+.navigation-list {
+    @include flex(row, space-between, center);
+}
+
+.navigation-item {
+    position: relative;
+    margin-right: 30px;
+    a {
+        @include font(15px, 300, 20px, $COLOR__WHITE);
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 110%;
+        left: 0%;
+        width: 0px;
+        height: 1px;
+        background: $COLOR__WHITE;
+        transition: .3s;
+    }
+    &:hover {
+        .services-list {
+            top: 150%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &::before {
+            transform: scale(1);
+            width: 100%;
+        }
+    }
+}
+
+.dropdown-menu {
+    @include flex(row, null, center);
+    svg {
+        margin-left: 5px;
+        transition: .3s;
+    }
+    &:hover {
+        svg {
+            transform: rotate(180deg);
+        }
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.language-switcher {
+    .lang-btn {
+        background-color: transparent;
+        @include flex(row, center, center);
+    }
+    &:hover {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.services-list {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 200%;
+    left: 0%;
+    width: 300px;
+    background: rgba(250, 153, 28, 0.12);
+    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    .services-item {
+        position: relative;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        @include flex(row, space-between, center);
+        svg {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        &:hover {
+            svg {
+                right: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}

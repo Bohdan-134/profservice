@@ -1,0 +1,50 @@
+@import '../../utils/main.utils.scss';
+.header {
+    overflow: hidden;
+    padding: 40px 0 0;
+    height: 790px;
+    background: linear-gradient(270deg, #FA991C -3.54%, #1C768F 100%);
+}
+
+.header-main {
+    position: relative;
+    height: calc(790px - 78px);
+    @include flex(row, null, flex-end);
+    .container-xl {
+        position: relative;
+        .header-img-wrap {
+            position: absolute;
+            right: -100px;
+            bottom: -110px;
+            z-index: 0;
+        }
+    }
+}
+
+.header-text-block {
+    padding-top: 30px;
+    max-width: 513px;
+    position: relative;
+    margin-bottom: 150px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 125px;
+        height: 1px;
+        background-color: $COLOR__ORANGE;
+    }
+}
+
+.header-title {
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    @include font(46px, 600, 52px, $COLOR__WHITE);
+}
+
+.header-subtitle {
+    margin: 20px 0;
+    letter-spacing: 0.015em;
+    @include font(15px, 300, 157%, #F8F3F2);
+}

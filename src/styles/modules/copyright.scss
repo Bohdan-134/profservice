@@ -1,0 +1,38 @@
+@import '../utils/main.utils.scss';
+.copyright-content {
+    height: 50px;
+    background-color: $COLOR__BLUE;
+    @include flex(row, null, center);
+    .container {
+        @include flex(row, space-between, center);
+    }
+}
+
+.copyright-logo {
+    svg {
+        height: 30px;
+    }
+}
+
+.social-link-list {
+    @include flex(row, center, center);
+    .social-link-item {
+        margin: 0 15px;
+        a {
+            svg {
+                path {
+                    transition: .3s;
+                }
+            }
+        }
+        &:hover {
+            a {
+                svg {
+                    path {
+                        fill: $COLOR__ORANGE;
+                    }
+                }
+            }
+        }
+    }
+}

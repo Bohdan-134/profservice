@@ -1,0 +1,2 @@
+
+import'./config/swiper.js';

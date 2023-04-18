@@ -1,0 +1,70 @@
+mixin navigation({srcMain, srcRepairDishwashers, srcRepairDryers, srcRepairWashingMachines, srcAboutUs, srcPrices, srcContacts})
+    .container-xl.navbar
+        a(href!=srcMain).logo-wrap
+            include ../../img/logo.svg
+        nav.navigation
+            ul.navigation-list
+                li.navigation-item
+                    a(href!=srcMain) Головна
+                li.navigation-item.dropdown-menu
+                    a(href="#") Послуги
+                    include ../../img/icons/expand-down.svg
+                    ul.services-list
+                        li.services-item
+                            a(href!=srcRepairWashingMachines) Ремонт пральних машин
+                            include ../../img/icons/expand-left.svg
+                        li.services-item
+                            a(href!=srcRepairDryers) Ремонт сушильних машин
+                            include ../../img/icons/expand-left.svg
+                        li.services-item
+                            a(href!=srcRepairDishwashers) Ремонт посудомийних машин
+                            include ../../img/icons/expand-left.svg
+                li.navigation-item
+                    a(href!=srcAboutUs) Про нас
+                li.navigation-item
+                    a(href!=srcPrices) Ціни
+                li.navigation-item
+                    a(href!=srcContacts) Контакти
+                li.navigation-item.language-switcher
+                    button.lang-btn
+                        include ../../img/icons/globe.svg
+
+mixin advantagesItem({imgSrc, imgAlt, title, text}) 
+    li.advantages-item
+        img(src!=imgSrc, alt!=imgAlt)
+        h4.h4= title
+        .subtitle= text
+
+
+mixin swiperSlide({title, text, pagesSrc, imgSrc, imgAlt})
+    .swiper-slide
+        .swiper-slide-text-content
+            h3.h3= title
+            p.subtitle= text
+            a(href!=pagesSrc).btn Детальніше
+        .swiper-slide-img-wrapp
+            img(src!=imgSrc, alt!=imgAlt)
+
+mixin callback(src)
+    section.section.callback
+        .container
+            .callback-text-content
+                h2.h2 Залишіть заявку на ремонт зараз
+                p.subtitle.callback-subtitle Наш професійний сервісний центр надає якісний ремонт побутової техніки у Києві. Залишіть заявку на ремонт, і ми зв'яжемося з вами найближчим часом.
+                a(href!=src).btn Залишити заявку
+            .callbackk-img-border-wrapp
+                .callbackk-img-border
+                include ../../img/order.svg
+
+mixin copyright(src)
+    .copyright-content
+        .container
+            a(href='src/index.html').copyright-logo
+                include ../../img/logo.svg
+            ul.social-link-list
+                li.social-link-item
+                    a(href="https://www.facebook.com/profile.php?id=100091394827824" target="_blank")
+                        include ../../img/icons/facebook.svg
+                li.social-link-item
+                    a(href="https://www.instagram.com/profservise.kyiv/?igshid=YmMyMTA2M2Y%3D" target="_blank")
+                        include ../../img/icons/instagram.svg
