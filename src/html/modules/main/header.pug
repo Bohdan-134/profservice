@@ -1,19 +1,19 @@
 include ../../utils/mixin.pug
 .header-top
     +navigation({
-        srcMain: '#',
-        srcRepairDishwashers: './html/pages/repair-dishwashers.html',
-        srcRepairDryers: './html/pages/repair-dryers.html',
-        srcRepairWashingMachines: './html/pages/repair-washing-machines.html',
-        srcAboutUs: './html/pages/about-us.html',
-        srcPrices:'./html/pages/prices.html',
-        srcContacts: './html/pages/contacts.html',
+        srcMain: './',
+        srcRepairDishwashers: 'repair-dishwashers.html',
+        srcRepairDryers: 'repair-dryers.html',
+        srcRepairWashingMachines: 'repair-washing-machines.html',
+        srcAboutUs: 'about-us.html',
+        srcPrices:'prices.html',
+        srcContacts: 'contacts.html',
     })
 .header-main
     .container-xl
         .header-text-block
             h1.header-title Професійний ремонт пральних машин у Києві
             p.header-subtitle Ми пропонуємо швидкий та професійний ремонт пральних машин усіх марок та моделей. Наші досвідчені майстри готові виїхати до вас додому у будь-який час, щоб швидко усунути несправності та повернути вашу машину у робочий стан.
-            a(href="./html/pages/contacts.html").btn Замовити ремон
+            a(href="contacts.html").btn Замовити ремон
         .header-img-wrap
             img(src="../../../image/washing-machine-main.svg", alt="washing-machine").header-img

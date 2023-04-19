@@ -1,0 +1,138 @@
+include ./html/utils/mixin.pug
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css')
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap' rel='stylesheet')
+        link(rel="stylesheet", href="./css/main.css")
+        title Profservice
+    body
+        header
+            // should be in navigation pug
+            style(type='text/css').
+                header {
+                    background-color: #1C768F;
+                }
+            .header-top
+                +navigation({
+                    srcMain: './',
+                    srcRepairDishwashers: 'repair-dishwashers.html',
+                    srcRepairDryers: 'repair-dryers.html',
+                    srcRepairWashingMachines: 'repair-washing-machines.html',
+                    srcAboutUs: 'about-us.html',
+                    srcPrices:'prices.html',
+                    srcContacts: 'contacts.html',
+                })
+        main
+            form(method="POST" onsubmit="submitForm(event)" id="contact-form")
+                label(for="name") Имя
+                input(type="text" id="name" name="name" required)
+                
+                label(for="phone") Телефон
+                input(type="tel" id="phone" name="phone" required)
+                
+                label(for="type") Тип
+                select(id="type" name="type" required)
+                    option(value="" selected disabled) Выберите тип
+                    option(value="car") Автомобиль
+                    option(value="bike") Мотоцикл
+                    
+                label(for="brand") Марка
+                input(type="text" id="brand" name="brand" required)
+                
+                label(for="problem") Проблема
+                textarea(id="problem" name="problem" required)
+                
+                button(type="submit") Отправить
+
+            script.
+                const allFieldsNames = ["name", "phone", "type", "brand", "problem"];
+                const form = document.getElementById('contact-form');
+
+                form.addEventListener('focus', (event) => {
+                    if(allFieldsNames.includes(event.target.name)) {
+                        // убирай стили ошибок с твоего пага бл уродского... скачай вебпак уже наконец
+                        console.log("hyu")
+                    }
+                }, true);
+
+                function validateForm(data) {
+                    return Object.entries(data).reduce((acc, [field, value]) => {
+                        if (value.length < 2) {
+                          return [...acc, { field, error: 'Поле должно содержать не менее 2 символов'}];
+                        }
+                        return acc
+                    }, [])
+                }
+
+                function submitForm(event) {
+                    event.preventDefault();
+
+                    const fields = allFieldsNames.reduce((acc, field) => {
+                        return {...acc, [field]: document.getElementById(field).value}
+                    }, {})
+
+                    const errors = validateForm(fields)
+
+                    if(errors?.length) {
+                        errors.forEach(({error, field}) => {
+                            // находим поле по field === id инпута + абоба 1
+                            const fieldEl = document.getElementById(field);
+                            // стилизуем и красим его + выводим ошибку под ним + абоба 2
+                            // ....
+                            console.log({field, error})
+                        })
+                        return;
+                    }
+
+
+
+                    console.log(fields);
+                    sendMessageTg(fields)
+                }
+
+                function sendMessageTg(fields) {
+
+                    const message = `
+                                     <b>Имя: </b> ${fields.name}\n 
+                                     <b>Номер телефона: </b> <a href="tel:${fields.phone}">${fields.phone}</a>\n
+                                     <b>Тип: </b> ${fields.type}\n
+                                     <b>Бренд: </b> ${fields.brand}\n
+                                     <b>Проблема: </b> ${fields.problem}
+                                    `
+
+
+                    // надо создать енв файлик и закинуть это туда (абоба 3)
+                    const TOKEN = "5983802864:AAExgkBMJmvq7cbGUPLMr-MU86njTObuuzE";
+                    const CHAT_ID = "-1001740432577";
+
+                    const options = {
+                        method: 'POST',
+                        headers: {
+                            accept: 'application/json',
+                            'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            text: message,
+                            parse_mode: 'HTML',
+                            disable_web_page_preview: false,
+                            disable_notification: false,
+                            reply_to_message_id: null,
+                            chat_id: CHAT_ID
+                        })
+                    };
+
+                    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, options)
+                        .then(response => response.json())
+                        .then(response => console.log(response))
+                        .catch(console.error);
+                }
+            +copyright()
+        script(src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js')
+        script(src='./js/main.js' type="module")
