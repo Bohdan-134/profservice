@@ -1,0 +1,5 @@
+@import '../utils/main.utils.scss';
+.rootline {
+    height: 237px;
+    @include flex(row, center, center);
+}

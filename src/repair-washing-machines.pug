@@ -1,1 +1,9 @@
-include ./index.pug
+extends ./html/modules/base/default-page.pug
+block vars
+    - title = 'Ремонт пральних машин';
+    -h1 = 'Ремонт пральних машин';
+block main
+    
+    include ./html/modules/base/callback.pug
+block footer
+    

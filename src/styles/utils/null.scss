@@ -160,3 +160,14 @@ h6 {
         }
     }
 }
+
+.header-rootline {
+    padding: 40px 0 0;
+    height: 315px;
+    background: linear-gradient(270deg, #FA991C -3.54%, #1C768F 100%);
+}
+
+.title-rootline {
+    letter-spacing: 0.01em;
+    @include font(40px, 500, 55px, $COLOR__WHITE);
+}

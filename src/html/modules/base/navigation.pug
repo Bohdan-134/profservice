@@ -1,0 +1,30 @@
+.header-top
+    .container-xl.navbar
+        a(href="index.html").logo-wrap
+            include ../../../img/logo.svg
+        nav.navigation
+            ul.navigation-list
+                li.navigation-item
+                    a(href="index.html") Головна
+                li.navigation-item.dropdown-menu
+                    a(href="#") Послуги
+                    include ../../../img/icons/expand-down.svg
+                    ul.services-list
+                        li.services-item
+                            a(href="repair-washing-machines.html") Ремонт пральних машин
+                            include ../../../img/icons/expand-left.svg
+                        li.services-item
+                            a(href="repair-dryers.html") Ремонт сушильних машин
+                            include ../../../img/icons/expand-left.svg
+                        li.services-item
+                            a(href="repair-dishwashers.html") Ремонт посудомийних машин
+                            include ../../../img/icons/expand-left.svg
+                li.navigation-item
+                    a(href="about-us.html") Про нас
+                li.navigation-item
+                    a(href="prices.html") Ціни
+                li.navigation-item
+                    a(href="contacts.html") Контакти
+                li.navigation-item.language-switcher
+                    button.lang-btn
+                        include ../../../img/icons/globe.svg
