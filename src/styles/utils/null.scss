@@ -168,6 +168,23 @@ h6 {
 }
 
 .title-rootline {
+    text-align: center;
     letter-spacing: 0.01em;
     @include font(40px, 500, 55px, $COLOR__WHITE);
+}
+
+.block-text-content-in-border {
+    position: relative;
+    margin-top: 100px;
+    margin: 100px auto 0;
+    border: 1px solid $COLOR__DARK__BLUE;
+    .text-content-in-border {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 35px;
+        width: 100%;
+        background-color: $COLOR__PINK;
+        border: 1px solid $COLOR__ORANGE;
+    }
 }
