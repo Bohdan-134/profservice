@@ -186,5 +186,11 @@ h6 {
         width: 100%;
         background-color: $COLOR__PINK;
         border: 1px solid $COLOR__ORANGE;
-    }
+        p {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }   
 }

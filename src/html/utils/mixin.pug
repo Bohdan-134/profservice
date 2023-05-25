@@ -14,8 +14,17 @@ mixin swiperSlide({title, text, pagesSrc, imgSrc, imgAlt})
         .swiper-slide-img-wrapp
             img(src!=imgSrc, alt!=imgAlt)
 
-mixin textContentinBorder({text})
+mixin textContentinBorder({...text})
     .container
         .block-text-content-in-border
             .text-content-in-border
-                p= text
+                each val in text    
+                    p.subtitle= val
+
+mixin faq-item({question, answer})
+    li.faq-item
+        .faq-img-wrap
+            include ../../img/icons/question.svg
+        .faq-text-content
+            h4.h4.faq-question= question
+            p.subtitle.faq-answer= answer
