@@ -1,0 +1,28 @@
+@import '../utils/main.utils.scss';
+
+.faq {
+    .h2 {
+        margin-bottom: 50px;
+    }
+    .faq-list-wrap {
+        @include flex(row, space-between, flex-start);
+    }
+}
+
+.faq-list {
+   
+}
+
+.faq-item {
+    margin-bottom: 50px;
+    max-width: 475px;
+    @include flex(row, null, flex-start);
+    .faq-img-wrap {
+        margin-right: 25px;
+    }
+    .faq-text-content {
+        .faq-question {
+            margin-bottom: 20px;
+        }
+    }
+}
