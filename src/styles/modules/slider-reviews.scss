@@ -1,0 +1,25 @@
+@import '../utils/main.utils.scss';
+
+.slider-reviews-list {
+    overflow: hidden;
+    padding-top: 55px;
+    .swiper-wrapper {
+        .slider-reviews-item.swiper-slide {
+            .reviews {
+                padding: 25px;
+                position: relative;
+                height: 200px;
+                background: linear-gradient(90deg, #1C768F 0%, #FA991C 100%);
+                @include flex(row, center, center);
+                .facebook-icons {
+                    position: absolute;
+                        top: 25px;
+                        left: 25px;
+                }
+                .reviews-text {
+                    color: $COLOR__WHITE;
+                }
+            }
+        }
+    }
+}

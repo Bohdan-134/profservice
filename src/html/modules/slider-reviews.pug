@@ -1,0 +1,27 @@
+include ../utils/mixin.pug
+section.section.slider-reviews
+    .container
+        h2.h2 Відгуки
+    .container
+        .slider-reviews-list.swiper-container
+            .swiper-wrapper
+                .slider-reviews-item.swiper-slide
+                    +reviews({
+                        reviewsSrc: 'https://www.facebook.com/permalink.php?story_fbid=pfbid0cB6Xh6oRDqaw29XGpMPzZPwCS7gmAfTCz5egFvxfPsZ1H1myx9GY7D3Fa1PHHd5yl&id=100001067972896',
+                        text: 'Дякую даному сервісу. Гарна робота, за доступну ціну. Однозначно можу рекомендувати всім своїм знайомим. Швидко, надійно, якісно !!!'
+                    })
+                .slider-reviews-item.swiper-slide
+                    +reviews({
+                        reviewsSrc: 'https://www.facebook.com/permalink.php?story_fbid=pfbid02YwN1BVWfvdSFFbx9kfWYEgXgoA2jqba4KJhmsdf87e5ifQM9Q3eS8H9H6W2tW5PYl&id=100006048674542',
+                        text: 'Дуже дякую даному сервісу,майстрам , роботу зробили чітко, швидко та якісно,  все потрібне відремонтували, рекомендую👍 @ProfServise'
+                    })
+                .slider-reviews-item.swiper-slide
+                    +reviews({
+                        reviewsSrc: 'https://www.facebook.com/tanya.zorina.71/posts/pfbid036hC4BV7kswZ92cgs5bmPN64rPHXpBXk7EFMfcphJBvpPJh4BUZYKaCJwcM4hLddYl',
+                        text: 'Дякую за швидку діагностику та якісний ремонт пральної машини.'
+                    })
+                .slider-reviews-item.swiper-slide
+                    +reviews({
+                        reviewsSrc: 'https://www.facebook.com/permalink.php?story_fbid=pfbid02pUtiEWrDcaa1bf7bsHd4A88MK4ACXFY24X2o7y39ZuJwE6dtMkTZPjSXt38PkifPl&id=100042186224056',
+                        text: 'Хорошая цена быстро и качественно спасибо'
+                    })

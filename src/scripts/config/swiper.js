@@ -12,3 +12,15 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+const swiperReviews = new Swiper('.slider-reviews-list', {
+     // Настройки слайдера
+     slidesPerView: 3,
+     spaceBetween: 25,
+ 
+     // Настройки пагинации
+     pagination: false,
+ 
+     // Настройки навигации
+     navigation: false
+});

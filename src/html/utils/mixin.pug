@@ -28,3 +28,9 @@ mixin faq-item({question, answer})
         .faq-text-content
             h4.h4.faq-question= question
             p.subtitle.faq-answer= answer
+
+mixin reviews({reviewsSrc, text})
+    a(href!=reviewsSrc).reviews
+        .facebook-icons
+            include ../../img/icons/facebook.svg
+        p.reviews-text.subtitle= text
