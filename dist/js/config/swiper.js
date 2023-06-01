@@ -1,2 +1,2 @@
 
-const swiper=new Swiper('.swiper',{slidesPerView:1,spaceBetween:10,pagination:false,navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev',},});const swiperReviews=new Swiper('.slider-reviews-list',{slidesPerView:3,spaceBetween:25,pagination:false,navigation:false});
+const swiper=new Swiper('.swiper',{slidesPerView:1,spaceBetween:10,pagination:false,navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev',},});const swiperReviews=new Swiper('.slider-reviews-list',{slidesPerView:2,spaceBetween:25,pagination:false,navigation:false,});

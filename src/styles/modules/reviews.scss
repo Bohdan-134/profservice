@@ -1,0 +1,43 @@
+@import '../utils/main.utils.scss';
+
+.reviews {
+    .h2 {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+}
+
+.reviews-list{
+    flex-wrap: wrap;
+    @include flex(row, center, null);
+}
+
+.reviews-item {
+    padding: 20px;
+    margin: 25px;
+    position: relative;
+    width: 400px;
+    height: 150px;
+    border: 1px solid $COLOR__ORANGE;
+    @include flex(row, center, center);
+    .reviewsLink {
+        position: absolute;
+        bottom: -25px;
+        width: 50px;
+        height: 50px;
+        background-color: $COLOR__PINK;
+        border: 1px solid $COLOR__DARK__BLUE;
+        @include flex(row, center, center);
+        svg {
+            path {
+                fill: $COLOR__DARK__BLUE;
+            }
+        }
+    }
+    .reviewsLink-right {
+        right: -25px;
+    }
+    .reviewsLink-left {
+        left: -25px;
+    }
+}
