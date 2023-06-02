@@ -1,1 +1,9 @@
-include ./index.pug
+extends ./html/modules/base/default-page.pug
+include ./html/utils/mixin
+block vars
+    - title = 'Ціни';
+    -h1 = 'Ціни';
+block main
+    include ./html/modules/prices.pug
+    include ./html/modules/base/callback.pug
+block footer

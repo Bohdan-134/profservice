@@ -1,0 +1,47 @@
+@import '../utils/main.utils.scss';
+
+section.prices {
+    padding: 100px 10px 50px;
+}
+
+.prices-list {
+    @include flex(row, space-between, null);
+}
+
+.prices-title-border {
+    position: relative;
+    width: 380px;
+    height: 60px;
+    border: 1px solid $COLOR__ORANGE;
+    margin-bottom: 65px;
+    .prices-title-text-wrap {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #1C768F 0%, #F29820 100%);
+        @include flex(row, center, center);
+        .h4 {
+            color: $COLOR__WHITE;
+        }
+    }
+}
+
+.services-prices-list {
+    margin-left: 10px;
+    .services-prices-item {
+        margin-bottom: 15px;
+        @include flex(row, space-between, center);
+        .services-name,
+        .services-price {
+            @include font(15px, 300, 20px, $COLOR__BLACK);
+        }
+        .services-price {
+            font-weight: 600;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    } 
+}

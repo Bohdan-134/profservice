@@ -25,12 +25,12 @@
         bottom: -25px;
         width: 50px;
         height: 50px;
-        background-color: $COLOR__PINK;
-        border: 1px solid $COLOR__DARK__BLUE;
+        background-color: $COLOR__BLUE;
+        border: 1px solid $COLOR__ORANGE;
         @include flex(row, center, center);
         svg {
             path {
-                fill: $COLOR__DARK__BLUE;
+                fill: $COLOR__WHITE;
             }
         }
     }

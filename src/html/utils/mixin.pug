@@ -35,3 +35,13 @@ mixin reviews({text, cssClass, reviewsLink})
         a(href!= reviewsLink class!= cssClass).reviewsLink 
             .facebook-icons
                 include ../../img/icons/facebook.svg
+
+mixin pricesTitle(text)
+    .prices-title-border
+        .prices-title-text-wrap
+            h4.h4= text
+
+mixin servicesPricesItem({sname, sprice})
+    li.services-prices-item 
+        span.services-name= sname
+        span.services-price= sprice
