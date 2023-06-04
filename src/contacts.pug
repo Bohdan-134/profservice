@@ -1,45 +1,27 @@
+extend ./html/modules/base/default-page
+block vars
+    - var title = 'Контакти';
+    - var h1 = 'Контакти';
 include ./html/utils/mixin.pug
-doctype html
-html(lang="uk")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css')
-        link(rel='preconnect' href='https://fonts.googleapis.com')
-        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
-        link(href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap' rel='stylesheet')
-        link(rel="stylesheet", href="./css/main.css")
-        title Profservice
-    body
-        header
-            // should be in navigation pug
-            style(type='text/css').
-                header {
-                    background-color: #1C768F;
-                }
-            .header-top
-        main
-            form(method="POST" onsubmit="submitForm(event)" id="contact-form")
-                label(for="name") Имя
-                input(type="text" id="name" name="name" required)
-                
-                label(for="phone") Телефон
-                input(type="tel" id="phone" name="phone" required)
-                
-                label(for="type") Тип
-                select(id="type" name="type" required)
-                    option(value="" selected disabled) Выберите тип
-                    option(value="car") Автомобиль
-                    option(value="bike") Мотоцикл
-                    
-                label(for="brand") Марка
-                input(type="text" id="brand" name="brand" required)
-                
-                label(for="problem") Проблема
-                textarea(id="problem" name="problem" required)
-                
-                button(type="submit") Отправить
+        block main
+            section.section.section-contact-form
+                .container
+                    .block-text-content-in-border
+                        .text-content-in-border
+                            form(method="POST" onsubmit="submitForm(event)" id="contact-form")
+                                .input-group
+                                    input(type="text" class="i-name" id="name" name="name" required placeholder="Ім'я")
+                                    input(type="tel" class="i-phone" id="phone" name="phone" required placeholder="Телефон")
+                                .input-group
+                                    select(id="type" name="type" required)
+                                        option(value="" selected disabled) Выберите тип
+                                        option(value="car") Автомобиль
+                                        option(value="bike") Мотоцикл
+                                    input(type="text" class="i-phone" id="brand" name="brand" required placeholder="Марка")
+                                .input-group.input-group-textarea
+                                    label(for="problem") Проблема
+                                    textarea(id="problem" name="problem" required) 
+                                button(type="submit") Отправить
 
             script.
                 const allFieldsNames = ["name", "phone", "type", "brand", "problem"];
@@ -48,7 +30,7 @@ html(lang="uk")
                 form.addEventListener('focus', (event) => {
                     if(allFieldsNames.includes(event.target.name)) {
                         // убирай стили ошибок с твоего пага бл уродского... скачай вебпак уже наконец
-                        console.log("hyu")
+                        
                     }
                 }, true);
 
