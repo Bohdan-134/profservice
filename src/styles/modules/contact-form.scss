@@ -1,7 +1,9 @@
 @import "../utils/main.utils.scss";
 
 .section-contact-form {
-
+    .h4 {
+        margin-bottom: 30px;
+    }
 }
 
 #contact-form {
@@ -19,20 +21,21 @@
                 @include font(15px, 400, 20px, #032539A1);
             }
         }
-
     }
     .input-group-textarea {
         margin-top: 25px;
         @include flex(column, null, null);
-        label {
-            @include font(15px, 400, 20px, #032539);
-        }
         textarea {
             margin-top: 10px;
             width: 100%;
+            max-width: 100%;
             height: 100px;
+            max-height: 100px;
             background-color: transparent;
             border-bottom: 1px solid #5395A8;
+            &::placeholder {
+                @include font(15px, 400, 20px, #032539A1);
+            }
         }
     }
 }

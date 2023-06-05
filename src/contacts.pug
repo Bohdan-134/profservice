@@ -8,20 +8,20 @@ include ./html/utils/mixin.pug
                 .container
                     .block-text-content-in-border
                         .text-content-in-border
+                            h4.h4 Отримайте швидку допомогу!<br> Заповніть форму зараз.
                             form(method="POST" onsubmit="submitForm(event)" id="contact-form")
                                 .input-group
                                     input(type="text" class="i-name" id="name" name="name" required placeholder="Ім'я")
                                     input(type="tel" class="i-phone" id="phone" name="phone" required placeholder="Телефон")
                                 .input-group
                                     select(id="type" name="type" required)
-                                        option(value="" selected disabled) Выберите тип
-                                        option(value="car") Автомобиль
-                                        option(value="bike") Мотоцикл
+                                        option(value="washing-machine" selected) Пральна машина
+                                        option(value="dryer") Сушильна машина
+                                        option(value="dishwashers") Посудомийна машина
                                     input(type="text" class="i-phone" id="brand" name="brand" required placeholder="Марка")
                                 .input-group.input-group-textarea
-                                    label(for="problem") Проблема
-                                    textarea(id="problem" name="problem" required) 
-                                button(type="submit") Отправить
+                                    textarea(id="problem" name="problem" placeholder="Проблема" required)
+                                button(type="submit" id="send-button") Отправить
 
             script.
                 const allFieldsNames = ["name", "phone", "type", "brand", "problem"];
@@ -29,7 +29,6 @@ include ./html/utils/mixin.pug
 
                 form.addEventListener('focus', (event) => {
                     if(allFieldsNames.includes(event.target.name)) {
-                        // убирай стили ошибок с твоего пага бл уродского... скачай вебпак уже наконец
                         
                     }
                 }, true);
