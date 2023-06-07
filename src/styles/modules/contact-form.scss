@@ -1,8 +1,19 @@
 @import "../utils/main.utils.scss";
 
+section.section-contact-form {
+    padding: 100px 10px 50px;
+}
+
 .section-contact-form {
-    .h4 {
+    .h3 {
         margin-bottom: 30px;
+        color: $COLOR__BLACK;
+    }
+    .block-text-content-in-border {
+        margin: 0;
+        .text-content-in-border {
+            padding: 40px;
+        }
     }
 }
 
@@ -35,6 +46,36 @@
             border-bottom: 1px solid #5395A8;
             &::placeholder {
                 @include font(15px, 400, 20px, #032539A1);
+            }
+        }
+    }
+    #send-button {
+        display: inline-block;
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        width: 100%;
+        height: 50px;
+        border: 1px solid $COLOR__BLUE;
+        background-color: transparent;
+        transition: .3s;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background-color: $COLOR__BLUE;
+            transition: .3s;
+            z-index: -1;
+        }
+        &:hover {
+            color: $COLOR__WHITE;
+            &::before {
+                top: 0;
             }
         }
     }
