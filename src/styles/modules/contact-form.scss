@@ -32,6 +32,14 @@ section.section-contact-form {
                 @include font(15px, 400, 20px, #032539A1);
             }
         }
+        input[type="text"], input[type="tel"], input[type="email"] {
+            &:-webkit-autofill {
+              
+              background-color: #fff;
+              color: #333;
+            }
+          }
+          
     }
     .input-group-textarea {
         margin-top: 25px;

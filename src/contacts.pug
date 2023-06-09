@@ -22,7 +22,13 @@ include ./html/utils/mixin.pug
                                 .input-group.input-group-textarea
                                     textarea(id="problem" name="problem" placeholder="Проблема" required)
                                 button(type="submit" id="send-button") Отправить
-
+                .container
+                    ul.contact-info-list
+                        +contactInfoList({
+                            pathImg: 'aboba',
+                            altImg: 'aboba',
+                            text: 'aboabaob'
+                        })
             script.
                 const allFieldsNames = ["name", "phone", "type", "brand", "problem"];
                 const form = document.getElementById('contact-form');
