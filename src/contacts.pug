@@ -22,13 +22,32 @@ include ./html/utils/mixin.pug
                                 .input-group.input-group-textarea
                                     textarea(id="problem" name="problem" placeholder="Проблема" required)
                                 button(type="submit" id="send-button") Отправить
-                .container
-                    ul.contact-info-list
-                        +contactInfoList({
-                            pathImg: 'aboba',
-                            altImg: 'aboba',
-                            text: 'aboabaob'
-                        })
+                section.section.section-contact-info
+                    .container
+                        ul.contact-info-list
+                                li.contact-info-item
+                                    .contact-info-img
+                                        img(src='/image/icons/oclock.svg', alt='oclock')
+                                    .contact-info-title
+                                        h4.h4 8:00 - 18:00
+                                li.contact-info-item
+                                    a(href="tel:0950367016").contact-info-link
+                                        .contact-info-img
+                                            img(src='./image/icons/phone.svg', alt='phone')
+                                        .contact-info-title
+                                            h4.h4 0950367016
+                                li.contact-info-item
+                                    a(href="https://www.facebook.com/profile.php?id=100091394827824" target="_blank").contact-info-link
+                                        .contact-info-img
+                                            img(src='./image/icons/facebook.svg', alt='facebook')
+                                        .contact-info-title
+                                            h4.h4 Facebook
+                                li.contact-info-item
+                                    a(href="https://www.instagram.com/profservise.kyiv/?igshid=YmMyMTA2M2Y%3D" target="_blank").contact-info-link
+                                        .contact-info-img
+                                            img(src='./image/icons/instagram.svg', alt='instagram')
+                                        .contact-info-title
+                                            h4.h4 Instagram
             script.
                 const allFieldsNames = ["name", "phone", "type", "brand", "problem"];
                 const form = document.getElementById('contact-form');

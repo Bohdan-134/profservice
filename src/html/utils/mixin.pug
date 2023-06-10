@@ -45,11 +45,3 @@ mixin servicesPricesItem({sname, sprice})
     li.services-prices-item 
         span.services-name= sname
         span.services-price= sprice
-
-mixin contactInfoList({pathImg, altImg, ...text})
-    li.contact-info-item
-        .contact-info-img
-            img(src!=pathImg, alt!=altImg)
-        .contact-info-title
-            each val in text
-                h4.h4= val
