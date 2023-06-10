@@ -4,7 +4,7 @@
     background-color: $COLOR__BLUE;
     @include flex(row, null, center);
     .container {
-        @include flex(row, space-between, center);
+        @include flex(row, center, center);
     }
 }
 
@@ -14,25 +14,26 @@
     }
 }
 
-.social-link-list {
-    @include flex(row, center, center);
-    .social-link-item {
-        margin: 0 15px;
-        a {
-            svg {
-                path {
-                    transition: .3s;
-                }
-            }
-        }
-        &:hover {
-            a {
-                svg {
-                    path {
-                        fill: $COLOR__ORANGE;
-                    }
-                }
-            }
-        }
-    }
-}
+// .social-link-list {
+//     @include flex(row, center, center);
+//     .social-link-item {
+//         margin: 0 15px;
+//         a {
+//             svg {
+//                 width: 20px;
+//                 height: 20px;
+//                 path {
+//                     color: #FA991C;
+//                     transition: .3s;
+//                 }
+//             }
+//         }
+//         &:hover {
+//             a {
+//                 svg {
+                    
+//                 }
+//             }
+//         }
+//     }
+// }
