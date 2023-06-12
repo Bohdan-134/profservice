@@ -29,9 +29,7 @@
         border: 1px solid $COLOR__ORANGE;
         @include flex(row, center, center);
         svg {
-            path {
-                fill: $COLOR__WHITE;
-            }
+            height: 40px;
         }
     }
     .reviewsLink-right {
