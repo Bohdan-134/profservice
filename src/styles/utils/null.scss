@@ -69,7 +69,7 @@ input {
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
-      transition: background-color 5000s ease-in-out 0s;
+        transition: background-color 5000s ease-in-out 0s;
     }
 }
 
@@ -148,6 +148,12 @@ h6 {
     max-width: 1190px;
 }
 
+@media screen and (max-width: 1300px) {
+    .container-xl {
+        max-width: 900px;
+    }
+}
+
 .btn {
     display: inline-block;
     padding: 10px 40px;
@@ -208,5 +214,5 @@ h6 {
                 margin-bottom: 0;
             }
         }
-    }   
+    }
 }

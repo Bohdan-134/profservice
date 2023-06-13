@@ -107,3 +107,18 @@
         }
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .header-top {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navigation {
+        display: none;
+    }
+    .navbar {
+        justify-content: center;
+    }
+}
