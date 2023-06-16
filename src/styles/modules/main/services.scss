@@ -67,12 +67,14 @@
 @media screen and (max-width: 800px) {
     .services {
         .container {
-            margin-top: 30px;
+            margin-top: 50px;
             width: 320px;
             height: 550px;
         }
     }
     .swiper {
+        top: 20px;
+        left: 20px;
         height: 550px;
         .swiper-slide {
             padding: 50px 40px;
