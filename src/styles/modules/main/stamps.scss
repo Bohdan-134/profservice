@@ -1,5 +1,12 @@
 @import '../../utils/main.utils.scss';
 .washer-brands-list {
     padding: 55px 0;
+    overflow: hidden;
     @include flex(row, space-between, center);
+}
+
+@media screen and (max-width: 800px) {
+    .washer-brands-list {
+        padding: 35px 0 25px;
+    }
 }

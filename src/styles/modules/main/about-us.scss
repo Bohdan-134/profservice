@@ -32,4 +32,60 @@
     .about-us__btn {
         color: $COLOR__ORANGE;
     }
+    .about-us-img-border-wrap.mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .about-us-img-border-wrap {
+        width: 300px;
+        height: 300px;
+        svg {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .about-us-text-content {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about-us {
+        .container {
+            justify-content: center;
+        }
+        .h2 {
+            text-align: center;
+        }
+    }
+    .about-us-img-border-wrap {
+        display: none;
+    }
+    .about-us-text-content {
+        max-width: 100%;
+        @include flex(column, null, center);
+        .about-us__subtitle {
+            margin: 30px 0 50px;
+            text-align: center;
+        }
+        .about-us-img-border-wrap.mobile {
+            width: 200px;
+            height: 200px;
+            @include flex(row, center, center);
+            .about-us-img {
+                top: -20px;
+                left: -20px;
+            }
+            svg {
+                width: 130px;
+                height: 130px;
+                margin: 0 20px 20px 0;
+            }
+        }
+        .about-us__btn {
+            margin-top: 30px;
+        }
+    }
 }
