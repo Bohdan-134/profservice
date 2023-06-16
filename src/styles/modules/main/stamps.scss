@@ -3,6 +3,9 @@
     padding: 55px 0;
     overflow: hidden;
     @include flex(row, space-between, center);
+    .washer-brands-item {
+        margin: 0 20px;
+    }
 }
 
 @media screen and (max-width: 800px) {

@@ -19,3 +19,23 @@
         margin: 20px 0 10px;
     }
 }
+
+@media screen and (max-width: 1300px) {
+    .advantages-list {
+        flex-wrap: wrap;
+    }
+    .advantages-item {
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .advantages {
+        .container {
+            margin-top: 10px;
+        }
+    }
+    .advantages-list {
+        @include flex(column, null, center);
+    }
+}
