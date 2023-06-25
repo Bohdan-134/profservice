@@ -22,9 +22,7 @@
         position: relative;
         overflow: hidden;
         padding: 0 0 0 40px;
-        @include flex(row,
-        flex-start,
-        center);
+        @include flex(row, flex-start, center);
         .swiper-slide-img-wrapp {
             position: absolute;
             z-index: -1;
@@ -33,7 +31,6 @@
             background-blend-mode: exclusion;
         }
     }
-    
     .swiper-slide-text-content {
         max-width: 460px;
         .subtitle {
@@ -62,6 +59,13 @@
 .swiper-button-next {
     right: -150px;
     background-image: url('../../../image/icons/swiper-arr-right.svg');
+}
+
+@media screen and (max-width: 1000px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
