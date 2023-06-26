@@ -3,5 +3,4 @@ window.addEventListener('DOMContentLoaded', function() {
     const parent = document.querySelector('.block-text-content-in-border');
     parent.style.height = getComputedStyle(child).height;
     parent.style.maxWidth = getComputedStyle(child).width;
-    console.log();
 });
