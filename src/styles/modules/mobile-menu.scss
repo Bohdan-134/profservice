@@ -1,0 +1,30 @@
+@import '../utils/main.utils.scss';
+.mobile-menu-wrapp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: $COLOR__ORANGE;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.services-mobile-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+.services-mobile-list.show {
+    max-height: 1000px; /* Здесь указывайте достаточно большое значение для плавного раскрытия */
+}
+
+@keyframes slide-top {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+}

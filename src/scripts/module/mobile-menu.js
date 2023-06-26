@@ -52,6 +52,12 @@ function htmlMobileMenu() {
                         <a href="contacts.html">Контакти</a>
                     </li>
                 </ul>
+                <button id="close-mobile-menu" class="close-menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 6L18 18" stroke="#222222" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                
+                </button>
             </nav>
         `
     )
@@ -62,4 +68,36 @@ function openMobileMenu() {
     wrapper.classList.add('mobile-menu-wrapp');
     wrapper.innerHTML = htmlMobileMenu();
     document.body.append(wrapper);
+    accordeonInit();
+}
+
+function closeMobileMenu() {
+    const wrapper = document.querySelector('.mobile-menu-wrapp');
+    wrapper.classList.add('close');
+}
+
+function accordeonInit() {
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+
+    dropdownMenus.forEach((dropdownMenu) => {
+    const link = dropdownMenu.querySelector('a');
+    const submenu = dropdownMenu.querySelector('.services-mobile-list');
+
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            toggleAccordion(submenu);
+        });
+    });
+
+    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+    closeMobileMenuBtn.addEventListener('click', function() {
+        closeMobileMenu();
+        setTimeout(() => {
+            document.getElementById('open-mobile-menu').classList.remove('not-show')
+        }, 400)
+    })
+}
+
+function toggleAccordion(element) {
+    element.classList.toggle('show');
 }
