@@ -10,7 +10,7 @@ if(widthWindow) {
 
 function htmlMobileMenu() {
     return (
-        `<div class="mobile-menu-wrapp">
+        `
             <nav class="navigation-mobile">
                 <ul class="navigation-mobile-list">
                     <li class="navigation-mobile-item">
@@ -53,10 +53,13 @@ function htmlMobileMenu() {
                     </li>
                 </ul>
             </nav>
-        </div>`
+        `
     )
 }
 
 function openMobileMenu() {
-    console.log('aboba')
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('mobile-menu-wrapp');
+    wrapper.innerHTML = htmlMobileMenu();
+    document.body.append(wrapper);
 }
