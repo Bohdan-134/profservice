@@ -103,3 +103,5 @@ function accordeonInit() {
 function toggleAccordion(element) {
     element.classList.toggle('show');
 }
+
+console.log('aboba');
