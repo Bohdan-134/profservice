@@ -75,7 +75,9 @@ function openMobileMenu() {
 
 function closeMobileMenu() {
     const wrapper = document.querySelector('.mobile-menu-wrapp');
-    wrapper.classList.add('close');
+    wrapper.classList.remove('mobile-menu-open');
+    wrapper.classList.add('mobile-menu-close');
+    setTimeout(() => wrapper.remove(), 1900)
 }
 
 function accordeonInit() {
@@ -96,7 +98,7 @@ function accordeonInit() {
         closeMobileMenu();
         setTimeout(() => {
             document.getElementById('open-mobile-menu').classList.remove('not-show')
-        }, 400)
+        }, 2000)
     })
 }
 
