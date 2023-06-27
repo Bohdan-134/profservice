@@ -11,6 +11,7 @@ if(widthWindow) {
 function htmlMobileMenu() {
     return (
         `
+        <div class="mobile-menu">
             <nav class="navigation-mobile">
                 <ul class="navigation-mobile-list">
                     <li class="navigation-mobile-item">
@@ -59,13 +60,14 @@ function htmlMobileMenu() {
                     </svg>                
                 </button>
             </nav>
+        </div>
         `
     )
 }
 
 function openMobileMenu() {
     const wrapper = document.createElement('div');
-    wrapper.classList.add('mobile-menu-wrapp');
+    wrapper.classList.add('mobile-menu-wrapp', 'mobile-menu-open');
     wrapper.innerHTML = htmlMobileMenu();
     document.body.append(wrapper);
     accordeonInit();

@@ -7,20 +7,60 @@
     right: 0;
     z-index: 999;
     background-color: $COLOR__ORANGE;
-    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    @include flex(row, center, center);
+}
+
+.mobile-menu-open {
+    animation: slide-top-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    .navigation-mobile-list {
+        .navigation-mobile-item {
+            position: relative;
+            $baseDelay: 0.5s; // Базовая задержка
+            $step: 0.2s; // Шаг увеличения задержки
+    
+            @for $i from 1 through 5 { // Здесь 4 - общее количество элементов <li>
+              &:nth-child(#{$i}) {
+                animation-name: slide-top;
+                animation-duration: 0.5s;
+                animation-delay: $baseDelay + ($i - 1) * $step;
+                animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                animation-fill-mode: both;
+              }
+            }
+          }
+    }
+    .close-menu {
+        position: relative;
+        animation: slide-top 0.5s 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
+
+.navigation-mobile-list {
+    text-align: center;
+    .navigation-mobile-item {
+        margin-bottom: 30px;
+        a {
+            @include font(25px, 300, 25px, $COLOR__BLACK);
+        }
+    }
+}
+
+.close-menu {
+    margin: 0 auto;
+    @include flex(row, center, center);
 }
 
 .services-mobile-list {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-  }
+}
   
 .services-mobile-list.show {
     max-height: 1000px; /* Здесь указывайте достаточно большое значение для плавного раскрытия */
 }
 
-@keyframes slide-top {
+@keyframes slide-top-menu {
     0% {
         top: 100%;
     }
@@ -28,3 +68,14 @@
         top: 0;
     }
 }
+
+@keyframes slide-top {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
