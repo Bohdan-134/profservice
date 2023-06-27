@@ -1,16 +1,6 @@
-const widthWindow = window.innerWidth < 800;
 
-if(widthWindow) {
-    const openMobileMenuBtn = document.getElementById('open-mobile-menu');
-    openMobileMenuBtn.addEventListener('click', function() {
-        this.classList.add('not-show');
-        setTimeout(openMobileMenu, 400)
-    });
-}
-
-function htmlMobileMenu() {
-    return (
-        `
+const widthWindow=window.innerWidth<800;if(widthWindow){const openMobileMenuBtn=document.getElementById('open-mobile-menu');openMobileMenuBtn.addEventListener('click',function(){this.classList.add('not-show');setTimeout(openMobileMenu,400)});}
+function htmlMobileMenu(){return(`
         <div class="mobile-menu">
             <nav class="navigation-mobile">
                 <ul class="navigation-mobile-list">
@@ -61,45 +51,8 @@ function htmlMobileMenu() {
                 </button>
             </nav>
         </div>
-        `
-    )
-}
-
-function openMobileMenu() {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('mobile-menu-wrapp', 'mobile-menu-open');
-    wrapper.innerHTML = htmlMobileMenu();
-    document.body.append(wrapper);
-    accordeonInit();
-}
-
-function closeMobileMenu() {
-    const wrapper = document.querySelector('.mobile-menu-wrapp');
-    wrapper.classList.add('close');
-}
-
-function accordeonInit() {
-    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-
-    dropdownMenus.forEach((dropdownMenu) => {
-    const link = dropdownMenu.querySelector('a');
-    const submenu = dropdownMenu.querySelector('.services-mobile-list');
-
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            toggleAccordion(submenu);
-        });
-    });
-
-    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-    closeMobileMenuBtn.addEventListener('click', function() {
-        closeMobileMenu();
-        setTimeout(() => {
-            document.getElementById('open-mobile-menu').classList.remove('not-show')
-        }, 400)
-    })
-}
-
-function toggleAccordion(element) {
-    element.classList.toggle('show');
-}
+        `)}
+function openMobileMenu(){const wrapper=document.createElement('div');wrapper.classList.add('mobile-menu-wrapp','mobile-menu-open');wrapper.innerHTML=htmlMobileMenu();document.body.append(wrapper);accordeonInit();}
+function closeMobileMenu(){const wrapper=document.querySelector('.mobile-menu-wrapp');wrapper.classList.add('close');}
+function accordeonInit(){const dropdownMenus=document.querySelectorAll('.dropdown-menu');dropdownMenus.forEach((dropdownMenu)=>{const link=dropdownMenu.querySelector('a');const submenu=dropdownMenu.querySelector('.services-mobile-list');link.addEventListener('click',(event)=>{event.preventDefault();toggleAccordion(submenu);});});const closeMobileMenuBtn=document.getElementById('close-mobile-menu');closeMobileMenuBtn.addEventListener('click',function(){closeMobileMenu();setTimeout(()=>{document.getElementById('open-mobile-menu').classList.remove('not-show')},400)})}
+function toggleAccordion(element){element.classList.toggle('show');}
