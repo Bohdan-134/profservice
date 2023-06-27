@@ -36,11 +36,11 @@
 }
 
 .mobile-menu-close {
-    animation: slide-bottom-menu 0.5s 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom-menu 0.5s 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     .navigation-mobile-list {
         .navigation-mobile-item {
             position: relative;
-            $baseDelay: 1.1s; // Базовая задержка
+            $baseDelay: 1s; // Базовая задержка
             $step: 0.2s; // Шаг увеличения задержки
     
             @for $i from 5 through 1 { // Здесь 4 - общее количество элементов <li>
@@ -71,8 +71,13 @@
 }
 
 .close-menu {
-    margin: 0 auto;
+    margin: 50px auto 0;
+    background-color: transparent;
     @include flex(row, center, center);
+    svg {
+        width: 45px;
+        height: 45px;
+    }
 }
 
 .services-mobile-list {
